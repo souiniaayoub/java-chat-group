@@ -1,3 +1,4 @@
+package Client;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -22,7 +23,7 @@ public class Client {
 			CMR = new ClientMsgReader();
 			CMW.start();
 			CMR.start();
-			//sc.close(); if i close it it will close in this ClientMsgWriter thread 
+			//sc.close(); if i close it it will close scanner in the ClientMsgWriter thread 
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

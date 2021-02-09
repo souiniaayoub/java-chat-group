@@ -1,3 +1,4 @@
+package sever;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,6 +28,7 @@ public class Serveur {
 				WaitingClients.add(Sc);
 				if (ActiveClients.size() < maxClients) {
 					ActiveClients.add(Sc);
+					sendWaitingMsg(Sc, "Connected.");
 					WaitingClients.remove(Sc);
 					threadpool.execute(new ClientRunnable(Sc));
 				} else {
